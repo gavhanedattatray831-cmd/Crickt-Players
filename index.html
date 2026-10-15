@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cricket Player Performance Analysis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <h1>Cricket Player Performance Analysis</h1>
+  <p>24 international players · batting, bowling and all-round numbers</p>
+</header>
+
+<main>
+  <section class="filters">
+    <input id="search" type="search" placeholder="Search player name">
+    <select id="country"><option value="">All countries</option></select>
+    <select id="role">
+      <option value="">All roles</option>
+      <option>Batter</option><option>Wicketkeeper</option><option>Bowler</option><option>All-rounder</option>
+    </select>
+  </section>
+
+  <section class="cards" id="cards"></section>
+
+  <section class="charts">
+    <div class="panel"><h2>Top run scorers</h2><canvas id="runsChart"></canvas></div>
+    <div class="panel"><h2>Top wicket takers</h2><canvas id="wktChart"></canvas></div>
+    <div class="panel wide"><h2>Batting average vs strike rate</h2><canvas id="scatterChart"></canvas></div>
+  </section>
+
+  <section class="panel">
+    <h2>Player table</h2>
+    <p class="hint">Click a column heading to sort.</p>
+    <div class="scroll">
+      <table id="table">
+        <thead><tr>
+          <th data-k="n">Player</th><th data-k="c">Country</th><th data-k="r">Role</th>
+          <th data-k="m">Matches</th><th data-k="runs">Runs</th><th data-k="avg">Bat avg</th>
+          <th data-k="sr">Strike rate</th><th data-k="h">100s</th><th data-k="f">50s</th>
+          <th data-k="w">Wickets</th><th data-k="ba">Bowl avg</th><th data-k="e">Economy</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>Compare two players</h2>
+    <div class="compare-pick">
+      <select id="p1"></select><span>vs</span><select id="p2"></select>
+    </div>
+    <div class="compare-chart"><canvas id="radarChart"></canvas></div>
+  </section>
+</main>
+
+<footer>Sample data (approximate career figures). Replace the list in script.js with your own data.</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
